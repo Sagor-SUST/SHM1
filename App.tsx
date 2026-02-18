@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Play, Pause, RotateCcw, Activity, Settings2, Info } from 'lucide-react';
-import { SimulationState, PhysicsData, GraphPoint } from './types';
-import LabCanvas from './components/LabCanvas';
-import PhysicsControls from './components/PhysicsControls';
-import DataDashboard from './components/DataDashboard';
-import DisplacementGraph from './components/DisplacementGraph';
-import TheorySection from './components/TheorySection';
+import { SimulationState, PhysicsData, GraphPoint } from './types.ts';
+import LabCanvas from './components/LabCanvas.tsx';
+import PhysicsControls from './components/PhysicsControls.tsx';
+import DataDashboard from './components/DataDashboard.tsx';
+import DisplacementGraph from './components/DisplacementGraph.tsx';
+import TheorySection from './components/TheorySection.tsx';
 
 const App: React.FC = () => {
   const [state, setState] = useState<SimulationState>({
@@ -29,7 +29,6 @@ const App: React.FC = () => {
   
   const getCurrentPhysics = useCallback((): PhysicsData => {
     if (state.isDragging) {
-      // While dragging, velocity and acceleration are effectively zero (or could be calculated, but simplified here)
       return {
         x: state.draggedX,
         v: 0,
@@ -80,7 +79,6 @@ const App: React.FC = () => {
     };
   }, [animate]);
 
-  // Update graph data periodically
   useEffect(() => {
     if (state.isRunning && !state.isDragging) {
       const interval = setInterval(() => {
@@ -116,7 +114,7 @@ const App: React.FC = () => {
       isDragging: false, 
       amplitude: finalX, 
       time: 0, 
-      isRunning: true // Resume oscillation on release
+      isRunning: true 
     }));
   };
 

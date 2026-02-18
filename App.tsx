@@ -176,7 +176,7 @@ const App: React.FC = () => {
                 <Activity size={18} className="text-amber-400" />
                 Displacement Plot
               </div>
-              <div className="h-64">
+              <div className="h-[250px] w-full min-h-[250px]">
                 <DisplacementGraph data={graphData} />
               </div>
             </div>
@@ -196,7 +196,7 @@ const App: React.FC = () => {
       </main>
       
       <footer className="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-        Physics Simulation Engine v1.1 • Drag the block to set initial displacement
+        Physics Simulation Engine v1.2 • Drag the block to set initial displacement
       </footer>
     </div>
   );

@@ -1,0 +1,5 @@
+{
+  "name": "SHM Physics Lab",
+  "description": "An interactive Simple Harmonic Motion (SHM) simulator featuring a block-spring system with real-time physics calculations, dynamic graphing, and adjustable parameters.",
+  "requestFramePermissions": []
+}
